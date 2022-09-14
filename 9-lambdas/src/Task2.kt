@@ -11,7 +11,7 @@ fun containsElement(users: List<User>, condition: (User) -> Boolean): Boolean
 
 Для этой задачи есть видео с разбором.
 */
-
+// Как вариант, но возвращает usera несколько раз
 /*fun main() {
     val user1 = User("Kirill", 108)
     val user2 = User("Lena", 110)
@@ -34,7 +34,7 @@ fun userByMaxAge(users: List<User>, condition: (User) -> User): List<User> {
     return maxUser
 }*/
 
-/*fun main() {
+fun main() {
     val user1 = User("Kirill", 108)
     val user2 = User("Lena", 110)
     val user3 = User("Alexander", 188)
@@ -42,16 +42,14 @@ fun userByMaxAge(users: List<User>, condition: (User) -> User): List<User> {
 
     val users = listOf(user1, user2, user3, user4)
 
-    val levelAge = minimumAge(users) {user: User -> user.age > 109}
+    val levelAge = minimumAge(users) {user: User -> user.age > 212}
 
     println(levelAge)
 }
 
 fun minimumAge (users: List<User>, condition: (User) -> Boolean): Boolean {
     for (user in users)
-       return if (condition(user))
-            true
-        else
-            false
+       if (condition(user))
+           return true
+    return false
 }
-*/
