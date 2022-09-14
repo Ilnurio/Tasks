@@ -28,10 +28,10 @@ fun main() {
     val sharashMontaj = Company("Шараш Монтаж", depart)
 
     val totalNumber = totalNumberOfEmployees(sharashMontaj)
-    println(totalNumber)
+    println("Общее число сотрудников: $totalNumber")
 
     val average = averageAgeOfEmployees(sharashMontaj)
-    println(average)
+    println("Средний возраст сотрудников $average")
 }
 
 fun totalNumberOfEmployees(company: Company):Int{
@@ -42,13 +42,15 @@ fun totalNumberOfEmployees(company: Company):Int{
 }
 
 fun averageAgeOfEmployees(company: Company): Int {
-    var sum = 0
-    var average = 0
+    var sum1 = 0
+    var sum2 = 0
+
     for (deparments in company.departments) {
+        sum1 += deparments.employees.size
+
         for (users in deparments.employees) {
-            sum += users.age
-            average = sum / deparments.employees.size
+            sum2 += users.age
         }
     }
-    return average
+    return sum2 / sum1
 }
