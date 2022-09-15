@@ -19,7 +19,7 @@ class Employee(val name: String, val salary: Int) {
 
     fun addProjectName(projectName: String) {
         projects.add(projectName)
-        println("Сотрудник: ${name} начал работу над проектом: ${projectName}")
+        println("Сотрудник: ${name} начал работу над проектом: $projectName")
     }
 
     fun printAllprojects(){
