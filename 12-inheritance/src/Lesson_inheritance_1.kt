@@ -42,6 +42,6 @@ class Manager(name: String, salary: Int) : Employee(name, salary) {
     private val projects: MutableList<String> = mutableListOf<String>()
 
     fun callToClient(clientName: String) {
-        println("Менеджер ${name}: звоню клиенту $clientName")
+        println("Менеджер ${name}: звоню клиенту $clientName") //
     }
 }
