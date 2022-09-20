@@ -60,6 +60,6 @@ class Manager(name: String, salary: Int) : Employee(name, salary), ClientWorkers
 
     override fun addProject(projectName: String) {
         projects.add(projectName)
-        println("Менеджер: ${name} передал работу над проектом: $projectName программистам")
+        println("Менеджер: ${name} передал работу над проектом: $projectName программистам!")
     }
 }
