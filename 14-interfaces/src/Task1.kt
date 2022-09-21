@@ -1,3 +1,5 @@
+import kotlin.math.sqrt
+
 /*
 Создайте интерфейс Movable (перемещаемый), в котором будут описаны функции moveLeft(step: Int), moveRight(step: Int),
 moveDown(step: Int), moveUp(step: Int).
@@ -9,6 +11,7 @@ moveDown(step: Int), moveUp(step: Int).
 */
 
 interface Movable{
+
     fun moveLeft(step: Int)
     fun moveRight(step: Int)
     fun moveDown(step: Int)
@@ -22,18 +25,22 @@ abstract class Figure(val color: String, var x: Int, var y:Int): Movable {
 
     override fun moveLeft(step: Int) {
         x -= step
+        return println("Фигура переместилась на $step влево")
     }
 
     override fun moveRight(step: Int) {
         x += step
+        return println("Фигура переместилась на $step вправо")
     }
 
     override fun moveDown(step: Int) {
         y += step
+        return println("Фигура переместилась на $step вниз")
     }
 
     override fun moveUp(step: Int) {
         y -= step
+        return println("Фигура переместилась на $step вверх")
     }
 }
 
@@ -57,5 +64,17 @@ class Round(color: String,x: Int, y: Int, val radius: Double) : Figure(color,x,y
     }
     override fun length(): Double {
         return 2 * Math.PI * radius
+    }
+}
+
+class Triangle(color: String, x: Int, y:Int, val a:Double, val b:Double, val c:Double): Figure(color,x,y), Movable{
+    override fun area(): Double {
+        val p = (a+b+c)/2
+        val result= sqrt(p * (p - a) * (p - b) * (p - c))
+        return result
+    }
+    override fun length(): Double {
+        val result = a + b + c
+        return result
     }
 }
