@@ -18,5 +18,25 @@ fun main1(){
 
 //Второй вариант работы с null
 
+fun main2(){
+    val inputchildrenCount:Int? = 2
+    val childrenCount = inputchildrenCount ?: 0
+}
+
+fun main3(){
+    val rectangle: Rectangle? = null
+
+    //if (rectangle != null)
+        //rectangle.printArea() - первый варинт, громоздкий
+    rectangle?.printArea()
+}
+
+class Rectangle(val a:Int, val b:Int){
+    fun printArea(){
+        val result = a * b
+        println(result)
+    }
+}
+
 
 
