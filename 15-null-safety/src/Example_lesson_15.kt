@@ -9,11 +9,11 @@ data class User(val name: String, val age:Int?)
 
 // Первый вариант работы с null
 fun main1(){
-    val inputchildrenCount:Int? = null
-    val childrenCount = if(inputchildrenCount == null)
+    val inputСhildrenCount:Int? = null
+    val childrenCount = if(inputСhildrenCount == null)
         0
     else
-        inputchildrenCount
+        inputСhildrenCount
 }
 
 //Второй вариант работы с null
